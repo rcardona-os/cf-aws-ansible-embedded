@@ -1,3 +1,6 @@
+---
+# Create a simple VM
+
 - name: Create a simple VM instance
   hosts: localhost
   connection: local
