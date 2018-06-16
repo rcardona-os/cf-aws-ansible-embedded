@@ -1,0 +1,27 @@
+---
+# Create a simple VM
+
+- name: Create a simple VM instance
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  
+  tasks:
+          
+    - name: Deploy new VM instance
+      ec2:
+        key_name: "{{ my_key_name }}"
+        instance_type: "{{ instance_type }}"
+        image: "{{ image }}"
+        wait: yes
+        count: 1
+        vpc_subnet_id: "{{ subnet }}"
+        assign_public_ip: yes
+        group: "{{ group_name }}"
+        region: "{{ region }}"
+        instance_tags:
+          app: "{{  app_name }}"
+      register: ec2
+
+
+    - debug: msg="TESTPLAYBOOKOUTPUT {{ ec2.instances[0].id }}"
