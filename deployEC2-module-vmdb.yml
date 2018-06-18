@@ -16,7 +16,7 @@
   tasks:
   - name: Get a vmdb object
     manageiq_vmdb:
-      href: "services/80"
+      href: "services/10000000000001"
     register: vmdb_object
           
   - name: Deploy new VM instance
