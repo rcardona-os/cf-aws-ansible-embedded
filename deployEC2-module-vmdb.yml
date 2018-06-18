@@ -7,11 +7,11 @@
   gather_facts: no
   
   vars:
-    - auto_commit: true
-    - manageiq_validate_certs: false
+  - auto_commit: true
+  - manageiq_validate_certs: false
   
   roles:
-    - syncrou.manageiq-vmdb
+  - syncrou.manageiq-vmdb
   
   tasks:
   - name: Get a vmdb object
