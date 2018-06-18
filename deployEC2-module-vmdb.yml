@@ -15,20 +15,20 @@
       href: "services/80"
     register: vmdb_object
           
-    - name: Deploy new VM instance
-      ec2:
-        key_name: "{{ my_key_name }}"
-        instance_type: "{{ instance_type }}"
-        image: "{{ image }}"
-        wait: yes
-        count: 1
-        vpc_subnet_id: "{{ subnet }}"
-        assign_public_ip: yes
-        group: "{{ group_name }}"
-        region: "{{ region }}"
-        instance_tags:
-          app: "{{  app_name }}"
-      register: ec2
+  - name: Deploy new VM instance
+    ec2:
+      key_name: "{{ my_key_name }}"
+      instance_type: "{{ instance_type }}"
+      image: "{{ image }}"
+      wait: yes
+      count: 1
+      vpc_subnet_id: "{{ subnet }}"
+      assign_public_ip: yes
+      group: "{{ group_name }}"
+      region: "{{ region }}"
+      instance_tags:
+        app: "{{  app_name }}"
+    register: ec2
       
   - name: Service Linking via an object
     manageiq_vmdb:
