@@ -5,6 +5,10 @@
   hosts: localhost
   connection: local
   gather_facts: no
+  
+  vars:
+    - auto_commit: true
+    - manageiq_validate_certs: false
 
   roles:
     - syncrou.manageiq-automate
