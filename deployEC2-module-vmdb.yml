@@ -45,4 +45,4 @@
           id: 10000000000002
 
 
-  - debug: msg="TESTPLAYBOOKOUTPUT {{ ec2.instances[0].id }}"
+  - debug: msg="TESTPLAYBOOKOUTPUT {{ ec2 }}"
