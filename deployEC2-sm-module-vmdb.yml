@@ -21,17 +21,17 @@
           
   - name: Deploy new VM instance
     ec2:
-      key_name: "dialog_option_1_{{ my_key_name }}"
-      instance_type: "dialog_option_1_{{ instance_type }}"
-      image: "dialog_option_1_{{ image }}"
+      key_name: "{{ my_key_name }}"
+      instance_type: "{{ instance_type }}"
+      image: "{{ image }}"
       wait: yes
       count: 1
-      vpc_subnet_id: "dialog_option_1_{{ subnet }}"
+      vpc_subnet_id: "{{ subnet }}"
       assign_public_ip: yes
-      group: "dialog_option_1_{{ group_name }}"
-      region: "dialog_option_1_{{ region }}"
+      group: "{{ group_name }}"
+      region: "{{ region }}"
       instance_tags:
-        app: "dialog_option_1_{{  app_name }}"
+        app: "{{  app_name }}"
     register: ec2
       
   - name: Service Linking via an object
