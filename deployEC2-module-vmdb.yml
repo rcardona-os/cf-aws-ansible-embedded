@@ -45,14 +45,14 @@
         provider:
           id: 10000000000002
           
-  - name: "Set a State Var"
-    manageiq_automate:
-      workspace: "{{ workspace }}"
-      set_state_var:
-        attribute: "host_target"
-        value:
-        - "{{ ec2.instances[0].public_ip }}"
-    register: workspace
+  #- name: "Set a State Var"
+  #  manageiq_automate:
+  #    workspace: "{{ workspace }}"
+  #    set_state_var:
+  #      attribute: "host_target"
+  #      value:
+  #      - "{{ ec2.instances[0].public_ip }}"
+  #  register: workspace
 
 
-  - debug: msg="TESTPLAYBOOKOUTPUT {{ ec2 }}"
+  - debug: msg="TESTPLAYBOOKOUTPUT {{ ec2.instances[0].public_ip }}"
