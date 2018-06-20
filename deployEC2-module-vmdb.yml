@@ -12,7 +12,7 @@
   
   roles:
   - syncrou.manageiq-vmdb
-  - syncrou.manageiq-automate
+  #- syncrou.manageiq-automate
     
   tasks:
   - name: Get a vmdb object
