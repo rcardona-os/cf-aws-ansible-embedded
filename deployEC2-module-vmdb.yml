@@ -46,7 +46,7 @@
           
   - name: "Set var"
     manageiq_vmdb:
-      set_state_var:
+      data:
         attribute: "host_target"
         value:
         - "{{ ec2.instances[0].public_ip }}"
