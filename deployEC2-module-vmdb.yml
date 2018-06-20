@@ -28,7 +28,7 @@
       count: 1
       vpc_subnet_id: "{{ subnet }}"
       assign_public_ip: yes
-      group_id: "{{ group_name }}"
+      group_id: "{{ group_id }}"
       region: "{{ region }}"
       instance_tags:
         app: "{{  app_name }}"
