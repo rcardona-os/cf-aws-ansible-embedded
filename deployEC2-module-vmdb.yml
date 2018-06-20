@@ -50,7 +50,8 @@
       workspace: "{{ workspace }}"
       set_state_var:
         attribute: "host_target"
-        value: "{{ ec2.instances[0].public_ip }}"
+        value:
+        - "{{ ec2.instances[0].public_ip }}"
     register: workspace
 
 
