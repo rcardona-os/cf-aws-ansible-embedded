@@ -12,6 +12,7 @@
   
   roles:
   - syncrou.manageiq-vmdb
+  - syncrou.manageiq-automate
     
   tasks:
   - name: Get a vmdb object
@@ -44,11 +45,5 @@
         provider:
           id: 10000000000002
           
-  - name: "Set var"
-    manageiq_vmdb:
-      data:
-        attribute: "host_target"
-        value:
-        - "{{ ec2.instances[0].public_ip }}"
 
   - debug: msg="TESTPLAYBOOKOUTPUT {{ ec2.instances[0].public_ip }}"
