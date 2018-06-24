@@ -11,10 +11,13 @@
   - manageiq_validate_certs: false
   
   roles:
-  - syncrou.manageiq-automate
   - syncrou.manageiq-vmdb
   
   tasks:
+  - name: Debug
+    debug:
+      var: hostvars[inventory_hostname]
+  
   - name: Get a vmdb object
     manageiq_vmdb:
       href: "services/10000000000064"
