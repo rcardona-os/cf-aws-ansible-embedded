@@ -49,4 +49,4 @@
           id: 10000000000002
           
 
-  - debug: msg="TESTPLAYBOOKOUTPUT {{ ec2.instances[0].public_ip }}"
+  - debug: msg=" VMDB PLAYBOOKOUTPUT {{ ec2.instances[0].public_ip }}"
