@@ -19,8 +19,9 @@
         workspace: "{{ workspace }}"
         set_attribute:
           object: "root"
-          attribute: "tower_job_id"
-          value:  "{{ tower_job_id }}"
+          attribute: "myattribute"
+          value:  "123456789"
+        register: myattribute
           
     - name: Deploy new VM instance
       ec2:
