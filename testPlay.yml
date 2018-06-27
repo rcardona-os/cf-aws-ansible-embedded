@@ -6,5 +6,20 @@
   connection: local
   gather_facts: no
   
+  vars:
+  - manageiq_validate_certs: false
+  - auto_commit: true
+  
+  roles:
+  - syncrou.manageiq-automate
+
   tasks:
-  - debug: msg="TEST PLAYBOOKOUTPUT {{ ec2.instances[0].id }}"
+  - name: "Get an attribute"
+    manageiq_automate:
+      workspace: "{{ workspace }}"
+      get_attribute:
+        object: "root"
+        attribute: "myattribute"
+    register: myattribute
+    
+  - debug: var=myattribute
