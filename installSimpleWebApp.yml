@@ -1,0 +1,18 @@
+---
+# This install a ramdon website
+
+- name: Installing MySimple WebApp
+  hosts: all
+  connection: ssh
+  remote_user: ec2-user
+  become_method : sudo
+  become: yes
+  gather_facts : yes
+  tasks:
+    - name: Copy required application package
+      copy:
+        src: simpleWebApp/
+        dest: /var/www/html/
+      with_items:
+        - mySuperApp.gif
+        - index.html
