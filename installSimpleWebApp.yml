@@ -1,6 +1,4 @@
 ---
-# This install a ramdon website
-
 - name: Installing MySimple WebApp
   hosts: all
   connection: ssh
