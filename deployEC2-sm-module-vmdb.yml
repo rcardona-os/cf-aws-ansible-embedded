@@ -60,7 +60,7 @@
       wait_for:
         host: "{{ ec2.instances[0].public_ip }}"
         port: 22
-        timeout: 300
+        timeout: 30
       delegate_to: localhost
 
     - name: Save public_ip in $evm.root
