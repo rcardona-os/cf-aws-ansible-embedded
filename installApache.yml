@@ -21,7 +21,7 @@
       set_attribute:
         object: root
         attribute: public_ip
-        value:  "{{ ec2.instances[0].public_ip }}"  
+        value:  "{{ public_ip }}"  
 
   tasks:
   - name: Install httpd package
