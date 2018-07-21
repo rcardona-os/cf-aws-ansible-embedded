@@ -9,11 +9,11 @@
   
   vars:
     manageiq_validate_certs: false
-    provider_id: "{{ provider_id }}"
 
   roles:
   - syncrou.manageiq-automate
-  - syncrou.manageiq-vmdb
+  
+  tasks:
   
   - name: Save public_ip in $evm.root
     manageiq_automate:
@@ -22,8 +22,7 @@
         object: root
         attribute: public_ip
         value:  "{{ public_ip }}"  
-
-  tasks:
+        
   - name: Install httpd package
     yum:
       name: httpd
