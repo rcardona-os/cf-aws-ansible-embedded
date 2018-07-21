@@ -1,6 +1,11 @@
 
 ---
 - hosts: all
+  connection: ssh
+  remote_user: ec2-user
+  become_method : sudo
+  become: yes
+  gather_facts : no
 
   tasks:
   - name: Install httpd package
