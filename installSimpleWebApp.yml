@@ -8,10 +8,10 @@
   gather_facts : no
   
   tasks:
-    - name: Copy required application package
-      copy:
-        src: simpleWebApp/
-        dest: /var/www/html/
-      with_items:
-        - mySuperApp.gif
-        - index.html
+  - name: Copy required application package
+    copy:
+      src: simpleWebApp/
+      dest: /var/www/html/
+    with_items:
+      - mySuperApp.gif
+      - index.html
