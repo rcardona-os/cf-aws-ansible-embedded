@@ -25,9 +25,9 @@
   - debug: msg="DEBUG Test Play {{ public_ip }}"
   
   - name: Save public_ip in $evm.root
-      manageiq_automate:
-        workspace: "{{ workspace }}"
-        set_attribute:
-          object: root
-          attribute: public_ip
-          value:  "{{ public_ip }}"
+    manageiq_automate:
+      workspace: "{{ workspace }}"
+      set_attribute:
+        object: root
+        attribute: public_ip
+        value:  "{{ public_ip }}"
