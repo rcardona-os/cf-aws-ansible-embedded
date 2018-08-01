@@ -62,5 +62,3 @@
           object: root
           attribute: public_ip
           value:  "{{ ec2.instances[0].public_ip }}"
-
-    - debug: var=public_ip
