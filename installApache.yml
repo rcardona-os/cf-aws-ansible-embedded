@@ -8,7 +8,8 @@
   gather_facts : no
   
   vars:
-    manageiq_validate_certs: false
+  - manageiq_validate_certs: false
+  - auto_commit: true
 
   roles:
   - syncrou.manageiq-automate
