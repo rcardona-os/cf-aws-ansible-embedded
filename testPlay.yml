@@ -19,7 +19,7 @@
       workspace: "{{ workspace }}"
       get_attribute:
         object: "root"
-        attribute: "myattribute"
-    register: myattribute
+        attribute: "public_ip"
+    register: public_ip
     
-  - debug: var=myattribute
+  - debug: var=public_ip
