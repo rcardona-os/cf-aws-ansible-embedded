@@ -31,5 +31,3 @@
         object: root
         attribute: public_ip
         value:  "{{ public_ip }}"
-
-  - debug: var=public_ip
