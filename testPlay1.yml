@@ -1,0 +1,25 @@
+---
+# Create a simple VM
+
+- name: Create a simple VM instance
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  
+  vars:
+  - manageiq_validate_certs: false
+  - auto_commit: true
+  
+  roles:
+  - syncrou.manageiq-automate
+
+  tasks:
+  - name: "Get an attribute Test Play 1"
+    manageiq_automate:
+      workspace: "{{ workspace }}"
+      get_attribute:
+        object: "root"
+        attribute: "public_ip"
+    register: public_ip
+    
+- debug: msg="Test Play 1 {{ public_ip }}"
