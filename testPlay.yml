@@ -14,7 +14,7 @@
   - syncrou.manageiq-automate
 
   tasks:
-  - name: "Get an attribute"
+  - name: "Get an attribute Test Play"
     manageiq_automate:
       workspace: "{{ workspace }}"
       get_attribute:
@@ -22,4 +22,4 @@
         attribute: "public_ip"
     register: public_ip
     
-  - debug: var=public_ip
+- debug: msg="Test Play {{ public_ip }}"
