@@ -7,21 +7,21 @@
   become: yes
   gather_facts : no
   
-  vars:
-    manageiq_validate_certs: false
+  #vars:
+  #  manageiq_validate_certs: false
 
-  roles:
-  - syncrou.manageiq-automate
+  #roles:
+  #- syncrou.manageiq-automate
   
   tasks:
   
-  - name: Save public_ip in $evm.root
-    manageiq_automate:
-      workspace: "{{ workspace }}"
-      set_attribute:
-        object: root
-        attribute: public_ip
-        value:  "{{ public_ip }}"  
+  #- name: Save public_ip in $evm.root
+  #  manageiq_automate:
+  #    workspace: "{{ workspace }}"
+  #    set_attribute:
+  #      object: root
+  #      attribute: public_ip
+  #      value:  "{{ public_ip }}"  
         
   - name: Install httpd package
     yum:
