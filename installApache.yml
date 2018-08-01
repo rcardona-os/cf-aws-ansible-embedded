@@ -7,23 +7,9 @@
   become: yes
   gather_facts : no
   
-  vars:
-  - manageiq_validate_certs: false
-  - auto_commit: true
-
-  roles:
-  - syncrou.manageiq-automate
   
   tasks:
-  
-  - name: "Get an attribute Test Play"
-    manageiq_automate:
-      workspace: "{{ workspace }}"
-      get_attribute:
-        object: "root"
-        attribute: "public_ip"
-    register: public_ip
-          
+    
   - name: Install httpd package
     yum:
       name: httpd
@@ -32,11 +18,3 @@
     service:
       name: httpd
       state: started
-      
-  - name: Save public_ip in $evm.root
-    manageiq_automate:
-      workspace: "{{ workspace }}"
-      set_attribute:
-        object: root
-        attribute: public_ip
-        value:  "{{ public_ip }}"
