@@ -22,4 +22,12 @@
         attribute: "public_ip"
     register: public_ip
     
-  - debug: msg="Test Play {{ public_ip }}"
+  - debug: msg="DEBUG Test Play {{ public_ip }}"
+  
+  - name: Save public_ip in $evm.root
+      manageiq_automate:
+        workspace: "{{ workspace }}"
+        set_attribute:
+          object: root
+          attribute: public_ip
+          value:  "{{ public_ip }}"
