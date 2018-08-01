@@ -16,13 +16,13 @@
   
   tasks:
   
-  #- name: Save public_ip in $evm.root
-  #  manageiq_automate:
-  #    workspace: "{{ workspace }}"
-  #    set_attribute:
-  #      object: root
-  #      attribute: public_ip
-  #      value:  "{{ public_ip }}"  
+  - name: "Get an attribute Test Play"
+    manageiq_automate:
+      workspace: "{{ workspace }}"
+      get_attribute:
+        object: "root"
+        attribute: "public_ip"
+    register: public_ip
           
   - name: Install httpd package
     yum:
